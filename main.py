@@ -60,5 +60,36 @@ def animate():
         time.sleep(0.3)
         column += 8
 
-
 animate()
+
+print()
+# Task 4: Sequence.txt
+def sequence():
+    file = open("sequence.txt", "r")
+    positive = []
+    negative = []
+    
+    for line in file:
+        number = float(line)
+        if 0<= number <=5:
+            positive.append(number)
+        elif -5<= number < 0:
+            negative.append(number)
+    
+    file.close()
+    
+    positive_count = len(positive)
+    negative_count = len(negative)
+    total = positive_count + negative_count
+
+    positive_percent = positive_count / total * 100
+    negative_percent = negative_count / total * 100
+    total = positive_count + negative_count
+
+    positive_length = int(positive_percent / 2)
+    negative_length = int(negative_percent / 2)
+
+    print(GREEN + " " * positive_length + RESET, f"{positive_percent:.1f}%")
+    print(RED + " " * negative_length + RESET, f"{negative_percent:.1f}%")
+
+sequence()
