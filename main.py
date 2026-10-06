@@ -4,10 +4,13 @@ GREEN = "\u001b[42m"
 RESET = "\u001b[0m"
 YELLOW = "\u001b[43m"
 RED = "\u001b[41m"
+
 for i in range(3):
     print(GREEN + ' ' * 8 + YELLOW + ' ' * 12 + RESET)
+
 for i in range(3):
     print(GREEN + ' ' * 8 + RED + ' ' * 12 + RESET)
+
 print()
 # Task 2: Pattern h
 def draw_pattern():
@@ -93,3 +96,20 @@ def sequence():
     print(RED + " " * negative_length + RESET, f"{negative_percent:.1f}%")
 
 sequence()
+
+print()
+
+#Допзадание
+def graph():
+    height = 10
+    start_row = 15
+    
+    for x in range(0, height):
+        y = x + 1
+        row = start_row + height - y 
+        column = x + 4
+        print(f"\u001b[{row};{column}H*", end="")
+   
+    print(f"\u001b[{height + 20};1H") 
+
+graph()
